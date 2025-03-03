@@ -25,7 +25,7 @@ class PetController extends Controller
             $request->name,
             fn ($query) => $query->orWhere('name', $request->name)
         )
-            ->orderBy('name', 'desc')
+            ->orderBy('id')
             ->get();
 
         return view('pets.index', ['pets' => $pets]);
@@ -36,9 +36,8 @@ class PetController extends Controller
         $pet = Pet::where('id', $request->id)
             ->with([
                 'appointments' => function ($query) use ($request) {
-                    $query->where('date', '2025-03-30');
+                    $query;
                 },
-                'appointments.doctors'
             ])
             ->first();
 

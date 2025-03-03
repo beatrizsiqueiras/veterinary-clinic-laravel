@@ -1,19 +1,9 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<x-layout>
+    <x-slot:title>
+        Show pet appointment
+    </x-slot>
 
-<head>
-    <meta charset="utf-8">
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1"
-    >
-    <title>Petshop - Show pet appointment</title>
-</head>
-
-<body>
     <h1>
         This is the appointment {{ $appointmentId }}
     </h1>
-</body>
-
-</html>
+</x-layout>

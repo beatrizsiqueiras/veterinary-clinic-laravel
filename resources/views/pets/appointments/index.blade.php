@@ -1,16 +1,8 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<x-layout>
+    <x-slot:title>
+        Show all appointments of this pet
+    </x-slot>
 
-<head>
-    <meta charset="utf-8">
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1"
-    >
-    <title>Petshop - Show all appointments of this pet</title>
-</head>
-
-<body>
     <h1>
         This is all appointments of this pet: {{ $pet->name }}
     </h1>
@@ -24,6 +16,4 @@
         <hr>
         <br>
     @endforeach
-</body>
-
-</html>
+</x-layout>

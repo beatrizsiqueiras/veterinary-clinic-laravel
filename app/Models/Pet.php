@@ -10,4 +10,9 @@ class Pet extends Model
     {
         return $this->hasMany(Appointment::class);
     }
+
+    public function breed()
+    {
+        return $this->hasOne(Breed::class);
+    }
 }

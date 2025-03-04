@@ -20,19 +20,19 @@
             id="navbarNavAltMarkup"
         >
             <div class="navbar-nav">
-                <a
+                {{-- <a
                     class="nav-link active"
                     aria-current="page"
                     href="#"
-                >Home</a>
+                >Home</a> --}}
                 <a
                     class="nav-link"
-                    href="http://127.0.0.1:8000/pets"
+                    href="/pets"
                 >Pets</a>
                 <a
                     class="nav-link"
-                    href="http://127.0.0.1:8000/appointments"
-                >Consultas</a>
+                    href="/appointments"
+                >Atendimentos</a>
             </div>
         </div>
     </div>

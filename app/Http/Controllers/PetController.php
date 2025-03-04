@@ -50,4 +50,9 @@ class PetController extends Controller
     {
         return view('pets.appointments.show', ['appointmentId' => $request->appointmentId]);
     }
+
+    public function create(): View
+    {
+        return view('pets.create');
+    }
 }

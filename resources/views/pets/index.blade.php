@@ -1,7 +1,17 @@
 <x-layout>
     <x-slot:title>
-        Show all pets
+        Pets
     </x-slot>
+
+    <div class="d-flex justify-content-end">
+        <a
+            class="btn btn-success"
+            href="/pets/create"
+        >
+            Criar
+            <i class="fa-solid fa-circle-plus"></i>
+        </a>
+    </div>
 
     <table class="table">
         <thead>
@@ -22,8 +32,10 @@
                     <td>{{ $pet->age }}</td>
                     <td>
                         <div class="d-flex justify-content-around">
-                            <a href=""><i class="bi bi-pen"></i></a>
-                            <a href="/pets/{{ $pet->id }}/appointments"><i class="bi bi-journal-medical"></i></a>
+                            <a href=""><i class="fa fa-pen"></i></a>
+                            <a href="/pets/{{ $pet->id }}/appointments">
+                                <i class="fa-solid fa-book-medical"></i>
+                            </a>
                         </div>
                     </td>
                 </tr>

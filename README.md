@@ -1,1 +1,1 @@
-Repo para ensinar meu amor Laravel <3
+Repo de estudos de @beatrizsiqueiras

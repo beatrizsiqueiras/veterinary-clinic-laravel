@@ -8,8 +8,8 @@
             class="btn btn-success"
             href="/pets/create"
         >
-            Criar
             <i class="fa-solid fa-circle-plus"></i>
+            Pet
         </a>
     </div>
 
@@ -20,6 +20,7 @@
                 <th scope="col">#</th>
                 <th scope="col">Nome</th>
                 <th scope="col">Idade</th>
+                <th scope="col">Raça</th>
                 <th scope="col"></th>
             </tr>
         </thead>
@@ -30,12 +31,18 @@
                     <th scope="row">{{ $pet->id }}</th>
                     <td>{{ $pet->name }}</td>
                     <td>{{ $pet->age }}</td>
+                    <td>{{ $pet->breed_name }}</td>
                     <td>
                         <div class="d-flex justify-content-around">
-                            <a href=""><i class="fa fa-pen"></i></a>
-                            <a href="/pets/{{ $pet->id }}/appointments">
-                                <i class="fa-solid fa-book-medical"></i>
-                            </a>
+                            <div class="dropdown">
+                                <button class="btn btn-ligth dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                                </button>
+                                <ul class="dropdown-menu">
+                                  <li><a class="dropdown-item" href="#">Editar</a></li>
+                                  <li><a class="dropdown-item" href="/pets/{{ $pet->id }}/appointments">Ver atendimentos</a></li>
+                                </ul>
+                              </div>
                         </div>
                     </td>
                 </tr>

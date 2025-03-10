@@ -3,7 +3,7 @@
         <a
             class="navbar-brand"
             href="#"
-        >Petshop</a>
+        >VetLabor</a>
         <button
             class="navbar-toggler"
             type="button"

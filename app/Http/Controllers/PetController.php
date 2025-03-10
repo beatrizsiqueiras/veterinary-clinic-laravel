@@ -20,13 +20,15 @@ class PetController extends Controller
     {
         $pets = Pet::when(
             $request->age,
-            fn ($query) =>
-                $query->where('age', '=', $request->age)
+            fn($query) =>
+            $query->where('age', '=', $request->age)
         )->when(
             $request->name,
-            fn ($query) => $query->orWhere('name', $request->name)
+            fn($query) => $query->orWhere('name', $request->name)
         )
-            ->orderBy('id')
+            ->select('pets.*', "breeds.name as breed_name")
+            ->leftJoin('breeds', 'pets.breed_id', '=', 'breeds.id')
+            ->orderBy('pets.id')
             ->get();
 
         return view('pets.index', ['pets' => $pets]);
@@ -61,7 +63,10 @@ class PetController extends Controller
 
     public function store(Request $request): void
     {
-        dd($request->all());
+        dd(
+            $request->validate([
+                'name' => 'required'
+            ])
+        );
     }
-
 }

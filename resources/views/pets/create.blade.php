@@ -52,20 +52,19 @@
 
                     <hr>
 
-                    <div class="row col-6">
-                        <label for=""></label>
-                        <div class="container mt-5">
-                            <select class="selectpicker" multiple aria-label="size 3 select example">
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                                <option value="4">Four</option>
-                            </select>
+                    <div class="row col-6 bg-danger">
+                        <div class="row" id="owners-list">
+                            @foreach ($owners as $owner)
+                                <div class="row d-none" id="owner-{{ $owner->id }}">
+                                    <p>{{ $owner->name }}
+                                        <input class="form-check-input mt-0" type="checkbox" value="{{ $owner->id }}"
+                                            aria-label="Checkbox for following text input">
+                                    </p>
+                                </div>
+                            @endforeach
                         </div>
                     </div>
-                    <div id="example-getting-started">
 
-                    </div>
                     <div class="col-12 d-flex justify-content-end">
                         <button type="submit" class="btn btn-success">Criar</button>
                     </div>

@@ -15,4 +15,9 @@ class Pet extends Model
     {
         return $this->hasOne(Breed::class);
     }
+
+    public function owners()
+    {
+        return $this->hasMany(PetOwner::class);
+    }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Breed;
 use App\Models\Pet;
+use App\Models\PetOwner;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
@@ -57,8 +58,8 @@ class PetController extends Controller
     public function create(): View
     {
         $breeds = Breed::all();
-
-        return view('pets.create', ['breeds' => $breeds]);
+        $owners = PetOwner::all();
+        return view('pets.create', ['breeds' => $breeds, 'owners' => $owners]);
     }
 
     public function store(Request $request): void
